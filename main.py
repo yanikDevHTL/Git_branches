@@ -64,6 +64,7 @@ class Currency:
             self.output_label.config(text="Error")
             return
         self.output_label.config(text=f"{betrag} Euro = {ergebnis} {selected_currency_2}")
+        #hallo
 
     def translate(self):
         #english übersetzen
