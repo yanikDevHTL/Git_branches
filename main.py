@@ -66,6 +66,7 @@ class Currency:
         self.output_label.config(text=f"{betrag} Euro = {ergebnis} {selected_currency_2}")
 
     def translate(self):
+        #english übersetzen
         if self.language == "Deutsch":
             self.label.config(text="Choose currency")
             self.label_3.config(text="Amount:")
@@ -73,14 +74,14 @@ class Currency:
             self.button.config(text="convert")
             self.language = "English"
             self.languageb.config(text="Deutsch")
-
+        #deustch übersetzen
         elif self.language =="English":
             self.label.config(text="Wähle Währung")
             self.label_3.config(text="Betrag")
             self.label_2.config(text="Wähle in umzurechnete Währung:")
             self.button.config(text="Umrechnen")
             self.language = "Deutsch"
-            self.languageb.config(text="English")
+            self.languageb.config(text="English") 
 
        
 
