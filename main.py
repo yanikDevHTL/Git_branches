@@ -44,7 +44,7 @@ class Currency:
         #print(f"Selected currency: {selected_currency}")
         print(f"Converted to: {selected_currency_2}")
 
-        betrag = float(self.entry())
+        betrag = float(self.entry.get())
         
         if selected_currency_2 =="Euro":
             ergebnis = betrag
@@ -57,7 +57,7 @@ class Currency:
         else:
             self.output_label.config(text="Error")
             return
-        self.output_lable.config(text=f"{betrag}Euro = {ergebnis}{selected_currency_2}")
+        self.output_label.config(text=f"{betrag}Euro = {ergebnis}{selected_currency_2}")
 
 if __name__ == "__main__":
     root = tk.Tk()
