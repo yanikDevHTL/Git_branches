@@ -7,6 +7,10 @@ class Currency:
         self.root.title("Währungsrechner")
         self.root.geometry("400x400")
     
+        # Button
+        self.languageb = tk.Button(self.root, text="English", command=self.translate)
+        self.languageb.pack(pady=10)
+
         # Label:
         self.label = tk.Label(self.root, text="Wähle Währung:")  
         self.label.pack(pady=10)
@@ -38,6 +42,9 @@ class Currency:
         self.output_label= tk.Label(self.root, text="")
         self.output_label.pack(pady=10)
 
+        #Merkvariable
+        self.language = "Deutsch"
+
     def umrechnen(self):
         #selected_currency = self.auswahl.get()  # Holt erste Währung
         selected_currency_2 = self.auswahl_2.get()  # Holt zweite Währung
@@ -56,7 +63,26 @@ class Currency:
         else:
             self.output_label.config(text="Error")
             return
-        self.output_label.config(text=f"{betrag}Euro = {ergebnis}{selected_currency_2}")
+        self.output_label.config(text=f"{betrag} Euro = {ergebnis} {selected_currency_2}")
+
+    def translate(self):
+        if self.language == "Deutsch":
+            self.label.config(text="Choose currency")
+            self.label_3.config(text="Amount:")
+            self.label_2.config(text="Select currency to convert:")
+            self.button.config(text="convert")
+            self.language = "English"
+            self.languageb.config(text="Deutsch")
+
+        elif self.language =="English":
+            self.label.config(text="Wähle Währung")
+            self.label_3.config(text="Betrag")
+            self.label_2.config(text="Wähle in umzurechnete Währung:")
+            self.button.config(text="Umrechnen")
+            self.language = "Deutsch"
+            self.languageb.config(text="English")
+
+       
 
 if __name__ == "__main__":
     root = tk.Tk()
