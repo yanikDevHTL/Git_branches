@@ -27,7 +27,7 @@ class Currency:
         self.label_2.pack(pady=10)
 
         # Dropdown 2
-        self.auswahl_2 = ttk.Combobox(self.root, values=["Euro", "US_Dollar", "Pound", "Yen"])  # Korrekt geschlossene Anführungszeichen
+        self.auswahl_2 = ttk.Combobox(self.root, values=["Euro", "US_Dollar", "Pound", "Yen"]) 
         self.auswahl_2.pack(pady=5)
 
         # Button
@@ -41,7 +41,6 @@ class Currency:
     def umrechnen(self):
         #selected_currency = self.auswahl.get()  # Holt erste Währung
         selected_currency_2 = self.auswahl_2.get()  # Holt zweite Währung
-        #print(f"Selected currency: {selected_currency}")
         print(f"Converted to: {selected_currency_2}")
 
         betrag = float(self.entry.get())
